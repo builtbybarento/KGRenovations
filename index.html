@@ -143,6 +143,17 @@
     .why-item h4 { font-size:1.28rem; margin-bottom:6px; }
     .why-item p { color: var(--ink-soft); font-size:1.03rem; }
 
+    /* Testimonials */
+    .testimonials { background: var(--cream); }
+    .tgrid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:24px; }
+    .tcard { display:flex; flex-direction:column; background: var(--paper); border:1px solid var(--line); border-radius:14px; padding:32px; box-shadow: 0 10px 24px -18px rgba(18,36,26,.5); }
+    .tcard .stars { color: var(--brass); font-size:1.15rem; letter-spacing:.12em; margin-bottom:14px; }
+    .tcard .quote { position:relative; color: var(--ink); font-size:1.08rem; line-height:1.65; flex:1; }
+    .tcard .quote::before { content:'\201C'; display:block; font-family:'Fraunces',serif; font-size:3rem; line-height:.6; color: var(--brass-light); margin-bottom:6px; }
+    .tcard .who { margin-top:22px; padding-top:18px; border-top:1px solid var(--line); }
+    .tcard .who .tname { font-family:'Fraunces',serif; font-weight:600; font-size:1.15rem; color: var(--green-900); }
+    .tcard .who .tloc { display:block; color: var(--green-600); font-weight:600; font-size:.9rem; letter-spacing:.04em; margin-top:2px; }
+
     /* Contact */
     .contact { background: var(--green-800); color:#fff; }
     .contact-grid { display:grid; grid-template-columns:1fr 1.1fr; gap:56px; }
@@ -208,6 +219,7 @@
         <a href="#services">Services</a>
         <a href="#work">Our Work</a>
         <a href="#steve">Meet Steve</a>
+        <a href="#testimonials">Testimonials</a>
         <a href="#contact">Contact</a>
       </nav>
       <a href="tel:3432648016" class="nav-phone">
@@ -351,6 +363,34 @@
     </div>
   </section>
 
+  <!-- Testimonials -->
+  <section class="testimonials" id="testimonials">
+    <div class="wrap">
+      <div class="section-head center">
+        <div class="eyebrow">In Their Own Words</div>
+        <h2>What homeowners are saying</h2>
+        <p>Honest work earns honest reviews. Here's what a few of our neighbours across Eastern Ontario had to say.</p>
+      </div>
+      <div class="tgrid">
+        <div class="tcard">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="quote">Steve Green did a great job expanding the porch, correcting the roof, including a steel roof over the new porch. I couldn't have asked for more. 💗💕💓</p>
+          <div class="who"><span class="tname">Ron Deschampbeau</span><span class="tloc">Cardinal, ON</span></div>
+        </div>
+        <div class="tcard">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="quote">I had Steve in to fix my pool deck. There was a lot of rot and it was becoming dangerous. Not only did he do an amazing job fixing it, he communicated throughout the process. He always let me know when he would arrive, when he was done for the day, and when he expected the job to be done. I will definitely be using him again in the future. You do good work Steve, and I appreciate it very much.</p>
+          <div class="who"><span class="tname">Andy Mannseichner</span><span class="tloc">Maitland, ON</span></div>
+        </div>
+        <div class="tcard">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="quote">I was having flooding problems in the basement apartment I'm building. Steve ran a pipe down to make sure it won't flood again, and built an amazing concrete structure and stairs to go with it. The apartment looks great now and I'm not worried about water anymore.</p>
+          <div class="who"><span class="tname">Brent Whitcomb</span><span class="tloc">Prescott, ON</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Contact -->
   <section class="contact" id="contact">
     <div class="wrap contact-grid">
@@ -409,6 +449,7 @@
         <a href="#services">Services</a>
         <a href="#work">Our Work</a>
         <a href="#steve">Meet Steve</a>
+        <a href="#testimonials">Testimonials</a>
         <a href="#contact">Contact</a>
         <a href="tel:3432648016">343 264-8016</a>
       </div>
