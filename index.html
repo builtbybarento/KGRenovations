@@ -417,7 +417,11 @@
           </div>
         </div>
       </div>
-      <form id="quoteForm" onsubmit="return handleSubmit(event)">
+      <form id="quoteForm" action="https://formsubmit.co/sgassuredrenos@gmail.com" method="POST" onsubmit="return handleSubmit(event)">
+        <input type="hidden" name="_subject" value="New estimate request — SG Assured Renovations" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
         <h3>Request a Free Estimate</h3>
         <p class="sub">Tell us a bit about your project and Steve will get back to you.</p>
         <div class="row2">
@@ -468,10 +472,30 @@
     document.getElementById('year').textContent = new Date().getFullYear();
     function handleSubmit(e){
       e.preventDefault();
+      var form=e.target;
       var note=document.getElementById('formNote');
-      note.textContent='✓ Thanks! Your request was received — Steve will get back to you shortly.';
-      note.style.color='var(--green-600)';
-      e.target.reset();
+      var btn=form.querySelector('button[type="submit"]');
+      var label=btn.textContent;
+      btn.disabled=true; btn.textContent='Sending…';
+      note.textContent='Sending your request…';
+      note.style.color='';
+      fetch('https://formsubmit.co/ajax/sgassuredrenos@gmail.com',{
+        method:'POST',
+        headers:{'Accept':'application/json'},
+        body:new FormData(form)
+      }).then(function(r){
+        if(!r.ok) throw new Error(r.status);
+        return r.json();
+      }).then(function(){
+        note.textContent='✓ Thanks! Your request was received — Steve will get back to you shortly.';
+        note.style.color='var(--green-600)';
+        form.reset();
+      }).catch(function(){
+        note.innerHTML='Sorry — that didn\'t send. Please call or text Steve at <a href="tel:3432648016">343 264-8016</a>.';
+        note.style.color='#c0392b';
+      }).then(function(){
+        btn.disabled=false; btn.textContent=label;
+      });
       return false;
     }
   </script>
